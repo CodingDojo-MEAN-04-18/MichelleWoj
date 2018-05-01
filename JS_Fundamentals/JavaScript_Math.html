@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <script>
+            function zero_negativity(x) {
+                for ( var i = 0; i< x.length; i++) {
+                    if (x[i] < 0 ) {
+                        return false;
+                    }
+                    return true;
+                 }
+            
+            }
+            let test1 = zero_negativity([1,-1,0]);
+            console.log(test1);
+
+            function is_even(x) {
+                if (x % 2 === 0) {
+                    return true;
+                }
+                else {
+                    return false
+                }
+            }
+
+            let test2 = is_even(6);
+            console.log(test2);
+
+            function how_many_even(arr) {
+                let sum = 0;
+                for (var i=0; i<arr.length; i++){
+                    if (is_even(arr[i])) {
+                        sum += 1;
+                    }
+                return sum;
+                }
+            }
+
+            let test3 = how_many_even([2,3,4,6]);
+            console.log(test3);
+
+            function create_dummy_array(n) {
+                let arr = [];
+                for (let i=0; i<n; i++){
+                    arr.push(Math.floor(Math.random() * 10));
+                }
+                return arr;
+            }
+            let test4 = create_dummy_array(7);
+            console.log(test4);
+
+            function random_choice(arr){
+                let random = (Math.floor(Math.random() * arr.length));
+                return arr[random];
+            }
+
+            let test5 = random_choice([1,2,3]);
+            console.log(test5);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
