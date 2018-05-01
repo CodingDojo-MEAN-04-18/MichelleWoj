@@ -1,0 +1,27 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>example</title>
+        <script type ="text/javascript">
+        function NinjaConstructor(name, health, speed, strength) {
+            this.name = name;
+            this.health = 100;
+            this.speed = 3;
+            this.strength = 3;
+            this.sayName = function() {
+                console.log("This ninja is named " + this.name);
+                return this;
+            }
+        }
+        var michelle = new NinjaConstructor("michelle");
+
+        michelle.sayName();
+        
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
+
+
