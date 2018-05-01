@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Ninja Class I Assignment</title>
+        <script type ="text/javascript">
+        class Ninja {
+            constructor (name) {
+                this.name = name;
+                this.health = 100;
+                this.speed = 3; 
+                this.strength = 3;
+            }
+            sayName() {
+                console.log("This ninja is named " + this.name);
+            }
+            showStats() {
+                console.log("Strength: "+ this.strength+ " and Speed: "+ this.speed + " and Health: " + this.health);
+            }
+            drinkSake() {
+                this.health +=10
+                console.log("Health: "+ this.health);
+            }
+        }
+        class Sensei extends Ninja {
+            constructor(name) {
+                super(name);
+                this.speed = 10
+                this.strength = 10;
+                this.wisdom = 10; 
+                this.health = 200;
+            }
+            speakWisdom(){
+                super.drinkSake();
+                console.log()
+            }
+            showStats() {
+                console.log("Name: " + this.name + " Health: " + this.health + " Speed: " + this.speed + " Strength: " + this.strength + " Wisdom: " + this.wisdom);
+            }
+        }
+        const Ninja1 = new Ninja("Michelle");
+
+        Ninja1.sayName();
+        Ninja1.showStats();
+        Ninja1.drinkSake();
+
+        const superSensei= new Sensei("Dumbledore");
+        superSensei.speakWisdom();
+        superSensei.showStats();
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
