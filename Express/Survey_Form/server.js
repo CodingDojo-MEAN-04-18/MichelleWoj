@@ -17,7 +17,7 @@ app.get('/', function(request, response) {
 });
 
 app.post('/results', function(request, response) {
-  response.render('results', { name: request.body.name, location: request.body.location,language:request.body.language, comment: request.body.commment });
+  response.render('results', { name: request.body.name, location: request.body.location,language:request.body.language, comment: request.body.comment });
 });
 
 app.listen(port, () => console.log(`Express server listening on port ${port}`));

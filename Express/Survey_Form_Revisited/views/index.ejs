@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Survey Form</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+  <script type ="text/javascript">
+  $(document).ready(function(){
+    //intiates connection
+    var socket = io.connect():
+    $('#form').submit(function(e){
+      e.preventDefault():
+      socket.emit("posting_form", {
+        name:$('#name').val(),
+        location:$('#location').val(),
+        language:$('#language').val(),
+        comment:$('#comment').val()
+      })
+    })
+    //display the response from the server
+    socket.on('updated_message', function(data){
+      $('#message').html("You emitted the following information to the server: " + JSON.stringify(data.response));
+		});
+		socket.on('random_number', function (data){
+		   $('#number').html("Your lucky number emitted by the server is : " + JSON.stringify(data.response));
+    })
+  })
+</head>
+
+
+<body>
+  <div id="message"></div>
+  <div id="number"></div>
+
+  <h1>Survey Form</h1>
+
+  <fieldset>
+    <form action="/results" id="form">
+      <label for="name">Name</label>
+      <input type="text" name='name' id="name">
+
+      <label for="location">Dojo Location:</label>
+      <select name="location" id="location">
+        <option value="online">Online</option>
+        <option value="washington">Washington DC</option>
+        <option value="chicago">Chicago</option>
+        <option value="seattle">Seattle</option>
+      </select>
+
+      <label for="language">Favorite Language:</label>
+      <select name="language" id="language">
+        <option value="java">Java</option>
+        <option value="ruby">Ruby</option>
+        <option value="HTML">HTML</option>
+        <option value="javascript">JavaScript</option>
+      </select>
+
+      <label for="comment">Comment</label>
+      <input type="textarea" name='comment' id="comment" rows="3" cols="20">
+
+      <input type="submit" value='submit'>
+    </form>
+  </fieldset>
+
+</body>
+</html>
