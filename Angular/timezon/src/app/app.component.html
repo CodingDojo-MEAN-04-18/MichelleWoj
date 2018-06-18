@@ -1,0 +1,21 @@
+<html>
+
+<head>
+</head>
+
+<body>
+  <h1>US Timezone Display</h1>
+  <div>
+    <button (click)="onButtonClick('EST')" [ngClass]="{highlight: lastTimeZoneSelected ==='EST'}">EST</button>
+    <button (click)=" onButtonClick( 'CST') " [ngClass]="{highlight: lastTimeZoneSelected ==='CST'}">CST</button>
+    <button (click)="onButtonClick( 'MST') " [ngClass]="{highlight: lastTimeZoneSelected ==='MST'}">MST</button>
+    <button (click)="onButtonClick( 'PST') " [ngClass]="{highlight: lastTimeZoneSelected ==='PST'}">PST</button>
+    <button (click)="onButtonClick( 'clear') ">RESET!</button>
+  </div>
+  <div>
+    <h2>{{time | date:'short'}}</h2>
+  </div>
+
+</body>
+
+</html>

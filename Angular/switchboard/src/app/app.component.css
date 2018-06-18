@@ -1,0 +1,9 @@
+div.row{
+  display: inline-block;
+}
+button {
+  background-color: red;
+}
+button.on {
+  background-color: green;
+}
