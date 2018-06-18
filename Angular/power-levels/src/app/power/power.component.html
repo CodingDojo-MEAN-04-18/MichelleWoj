@@ -1,0 +1,19 @@
+<fieldset>
+  <legend>Power Component</legend>
+  <form (submit)='onSubmit()'>
+    <div>
+      <label for="">Initial Power Level:</label>
+      <input type="number" name='powerLevel' required [(ngModel)]='user.powerLevel' #powerLevel="ngModel">
+      <div class="error" *ngIf="!powerLevel.valid">Initital power level must be a number between 1 - 100</div>
+    </div>
+    <button>Submit</button>
+  </form>
+  <div class="inline">
+    <app-power-multiplier [title]="'Human Component'" [multiplier]="1" [myPower]='submitUser.powerLevel'></app-power-multiplier>
+    <app-power-multiplier [title]="'Saiyan Component'" [multiplier]="10" [myPower]='submitUser.powerLevel'></app-power-multiplier>
+    <app-power-multiplier [title]="'Super Saiyan Component'" [multiplier]="90" [myPower]='submitUser.powerLevel'></app-power-multiplier>
+    <app-power-multiplier [title]="'Super Saiyan Two Component'" [multiplier]="150" [myPower]='submitUser.powerLevel'></app-power-multiplier>
+    <app-power-multiplier [title]="'Super Saiyan Three Component'" [multiplier]="250" [myPower]='submitUser.powerLevel'></app-power-multiplier>
+    <app-power-multiplier [title]="'Super Saiyan Four Component'" [multiplier]="500" [myPower]='submitUser.powerLevel'></app-power-multiplier>
+  </div>
+</fieldset>

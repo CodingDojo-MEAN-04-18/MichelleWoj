@@ -1,0 +1,7 @@
+.inline {
+  display: inline-block;
+}
+.error {
+  display: inline-block;
+  color: red;
+}
