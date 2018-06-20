@@ -26,7 +26,7 @@ export class AppComponent {
     // console.log('onSubmit()');
     // console.log(this.user);
     this.users.push(this.user);
-    console.log('users', this.users);
+    console.log('users', this.user);
     this.user = {
       firstname: '',
       lastname: '',

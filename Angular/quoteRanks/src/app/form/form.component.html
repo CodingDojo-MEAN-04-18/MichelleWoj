@@ -1,0 +1,31 @@
+<fieldset>
+  <legend>Add a Quote!</legend>
+  <form (submit)='onSubmit()'>
+    <div>
+      <label for=""></label>
+      <input class="wide" type="text" name='text' required minlength="1" [(ngModel)]='quote.text' #text="ngModel">
+      <div class="error" *ngIf="!text.valid">Quote is required</div>
+    </div>
+    <div>
+      <label for="">Author</label>
+      <input type="text" name='author' required minlength="1" [(ngModel)]='quote.author' #author="ngModel">
+      <div class="error" *ngIf="!author.valid">Author is required</div>
+    </div>
+    <button>Submit</button>
+  </form>
+  <div class="inline">
+    <app-form-list [quotes]="quotes"></app-form-list>
+  </div>
+</fieldset>
+<!-- <fieldset>
+  <legend>Power Component</legend>
+  <form (submit)='onSubmit()'>
+    <!<div>
+      <label for="">Initial Power Level:</label>
+      <input type="number" name='powerLevel' required [(ngModel)]='user.powerLevel' #powerLevel="ngModel">
+      <div class="error" *ngIf="!powerLevel.valid">Initital power level must be a number between 1 - 100</div>
+    </div> -->
+<!-- <button>Submit</button>
+</form> -->
+
+<!-- </fieldset> -->
