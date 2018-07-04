@@ -1,0 +1,17 @@
+<h3>Add a Note:</h3>
+<form (submit)='onSubmit($event, form)' #form='ngForm'>
+  <div>
+    <label for="">Note:</label>
+    <input type="text" name='text' required #text='ngModel' minlength="3" [(ngModel)]='newNote.text'>
+  </div>
+  <div *ngIf='text.errors'>
+    <div *ngIf='text.errors.minlength'>
+      Note must contain at least 3 letters
+    </div>
+    <!-- <div *ngIf='(text.touched) && text.errors.required'>
+      You must enter a note
+    </div> -->
+  </div>
+  <button type="submit">Add Note</button>
+</form>
+<!-- [disabled]="!form.valid" -->

@@ -1,0 +1,60 @@
+<div class="border">
+  <h2>Submit a movie and your review</h2>
+  <form (submit)='onSubmit($event, form)' #form='ngForm'>
+    <div>
+      <label for="">Movie Title:</label>
+      <input type="text" name='title' required #title='ngModel' minlength="3" [(ngModel)]='newMovie.title'>
+    </div>
+    <div *ngIf='title.errors'>
+      <div class="errors" *ngIf='title.errors.minlength'>
+        Title must contain at least 3 letters
+      </div>
+      <div class="errors" *ngIf='(title.touched) && title.errors.required'>
+        You must enter a title for the movie that you'd like to submit
+      </div>
+    </div>
+    <div>
+      <label for="">Your name:</label>
+      <input type="text" name='author' required #author='ngModel' minlength="3" [(ngModel)]='newReview.author'>
+    </div>
+    <div *ngIf='author.errors'>
+      <div class="errors" *ngIf='author.errors.minlength'>
+        Your name must contain at least 3 letters
+      </div>
+      <div class="errors" *ngIf='(author.touched) && author.errors.required'>
+        You must enter a name if you'd like to enter a review
+      </div>
+    </div>
+    <div>
+      <label for="">Stars:</label>
+      <select name='stars' required #stars='ngModel' [(ngModel)]='newReview.stars'>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+    <div *ngIf='stars.errors'>
+      <div class="errors" *ngIf='(stars.touched) && stars.errors.required'>
+        For your review, you must select a number of stars for the movie
+      </div>
+    </div>
+    <div>
+      <label for="">Review:</label>
+      <input type="text" name='revew' required #review='ngModel' [(ngModel)]='newReview.review'>
+    </div>
+    <div *ngIf='review.errors'>
+      <div class="errors" *ngIf='review.errors.minlength'>
+        Your review must contain at least 3 letters
+      </div>
+      <div class="errors" *ngIf='(review.touched) && review.errors.required'>
+        Please type a review in order to submit
+      </div>
+    </div>
+    <div>
+      <button class="submit" [disabled]="!form.valid" type="submit">Submit</button>
+      <button class="cancel" [routerLink]="['/movies']">Cancel</button>
+    </div>
+  </form>
+</div>

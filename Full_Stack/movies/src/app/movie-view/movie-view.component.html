@@ -1,0 +1,21 @@
+<div>
+  <button class="delete" (click)="onDelete()"> Delete Movie</button>
+</div>
+<div class="border">
+  <h3>Reviews for {{movie?.title}}</h3>
+  <table class="table">
+    <tbody>
+      <tr>
+        <td class="title">Reviewers</td>
+        <td class="title">Stars</td>
+        <td class="title">Reviews</td>
+      </tr>
+      <tr *ngFor="let review of movie?.reviews">
+        <td>{{ review.author }} </td>
+        <td>{{ review.stars }} </td>
+        <td>{{ review.review}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

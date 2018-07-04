@@ -1,0 +1,33 @@
+div.border{
+  border: 1px solid black;
+  padding: 10px;
+  display: inline-block;
+}
+label {
+  color: gray;
+  text-align: left;
+  font-weight: bold;
+}
+input {
+  display:inline-block;
+  margin-left: 50px;
+}
+select {
+  display: inline-block;
+  margin-left: 100px;
+}
+.submit{
+  color: white;
+  background: linear-gradient(#d0e6fd, #3f5565);
+  margin: 10px;
+  border-radius: 3px;
+}
+.cancel{
+  color: white;
+  background: linear-gradient(#fdd0a2, #3f5564);
+  margin: 10px;
+  border-radius: 3px;
+}
+.errors{
+  color: purple;
+}

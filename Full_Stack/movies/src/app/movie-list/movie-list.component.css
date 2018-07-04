@@ -1,0 +1,45 @@
+div.border{
+  border: 1px solid black;
+  padding: 10px;
+  display: inline-block;
+}
+.inline{
+  display: inline-block;
+}
+table, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+}
+.title {
+  color: white;
+  font-weight: bold;
+}
+
+.table tr:nth-child(odd) {
+  background-color: #d3d3d3;
+}
+.table tr:nth-child(even) {
+  background-color: white;
+}
+.addMovie {
+  color: white;
+  background: linear-gradient(#daebda, #415866);
+  margin: 10px;
+  float: right;
+  border-radius: 3px;
+  /* display: inline-block; */
+
+}
+.reviews {
+  color: white;
+  background: linear-gradient(#fbfc87, #5e707c);
+  margin: 10px;
+  border-radius: 3px;
+}
+.newReview {
+  color: white;
+  background: linear-gradient(#daebda, #415866);
+  margin: 10px;
+  border-radius: 3px;
+}
