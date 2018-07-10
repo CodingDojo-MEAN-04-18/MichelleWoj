@@ -10,7 +10,7 @@
         <td class="title">Stars</td>
         <td class="title">Reviews</td>
       </tr>
-      <tr *ngFor="let review of movie?.reviews">
+      <tr *ngFor="let review of sortByRating(movie?.reviews)">
         <td>{{ review.author }} </td>
         <td>{{ review.stars }} </td>
         <td>{{ review.review}}</td>

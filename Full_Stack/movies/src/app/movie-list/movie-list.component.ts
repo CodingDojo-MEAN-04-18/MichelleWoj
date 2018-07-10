@@ -17,4 +17,17 @@ export class MovieListComponent implements OnInit {
       this.movies = movies;
     });
   }
+
+  averageRating(reviews) {
+    let total = 0;
+    let number = 0;
+    let average = 0;
+    const x = reviews.length;
+    for (let i = 0; i < reviews.length; i++) {
+      total = total + reviews[i].stars;
+    }
+    number = total / x;
+    average = Math.round(number * 10) / 10;
+    return average;
+  }
 }

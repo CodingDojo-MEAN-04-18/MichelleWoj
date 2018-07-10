@@ -29,5 +29,11 @@ export class MovieViewComponent implements OnInit {
 
     this._router.navigate(['/movies']);
   }
+  sortByRating(reviews) {
+    if (!reviews) {
+      return null;
+    }
+    return reviews.sort(function (a, b) { return b.stars - a.stars; });
+  }
 
 }

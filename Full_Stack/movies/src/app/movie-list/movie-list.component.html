@@ -8,10 +8,12 @@
     <tbody>
       <tr>
         <td class="title">Movie Title</td>
+        <td class="title"> Average Rating</td>
         <td class="title">Available Actions</td>
       </tr>
       <tr *ngFor="let movie of movies">
         <td>{{ movie.title }} </td>
+        <td> {{averageRating(movie.reviews)}} </td>
         <td>
           <button class="reviews" [routerLink]="['/movies', movie._id]"> Read reviews</button>
           <button class="newReview" [routerLink]="['/movies', movie._id, 'review']">Write review</button>
